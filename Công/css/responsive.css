@@ -1,0 +1,122 @@
+﻿/*Màn hình kích thước lớn*/
+@media (min-width: 1921px) {}
+
+/*Màn hình máy tính mới*/
+@media (min-width: 1601px) and (max-width: 1920px) {}
+
+/*Màn hình laptop cũ*/
+@media (min-width: 1025px) and (max-width: 1600px) {}
+
+/*Màn hình máy tính bảng*/
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+/*Màn hình mobile*/
+@media (max-width: 768px) {
+    .custom-header {
+        font-size: 24px;
+    }
+
+    .custom-navbar {
+        padding: 0;
+    }
+
+    .custom-navbar .nav-item:not(:first-child) {
+        padding-left: 0;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    .custom-banner {
+        width: 100%;
+        height: 100%;
+    }
+    .side-image {
+        margin-bottom: 15px;
+    }
+    .center-image img {
+        height: 350px;
+        margin-bottom: 15px;
+    }
+    .custom-tab .col-md-2 {
+        flex: none;
+        max-width: 100%;
+    }
+    .custom-header-slide {
+        font-size: 24px;
+    }
+    .custom-header-slide::before {
+        width: 60px;
+    }
+    .custom-header-slide::after {
+        width: 60px;
+    }
+    .custom-avatar {
+        border: none;
+    }
+    .custom-review {
+        padding: 25px;
+    }
+    .custom-header-news {
+        font-size: 24px;
+    }
+    .custom-tab .col-md-2 img {
+        width: 55%;
+    }
+    .custom-img-news {
+        padding: 0;
+    }
+    .custom-showroom {
+        font-size: 22px;
+        padding: 2% 0;
+    }
+    .custom-btn-showroom button {
+        margin: 15px;
+    }
+    .custom-notification {
+        padding: 5% 0;
+    }
+    .custom-left {
+        padding-bottom: 10px;
+    }
+    .input-group {
+        justify-content: flex-start;
+    }
+    .input-group input {
+        min-width: 210px;
+    }
+    .custom-info {
+        padding: 15px 0;
+    }
+    .map-responsive iframe {
+        height: 100%;
+        width: 100%;
+    }
+    .fb-page {
+        height: 100%;
+        width: 100%;
+    }
+    .custom-btn button {
+        font-size: 18px;
+    }
+    .side-image img {
+        height: auto;
+    }
+    ul.dropdown-menu {
+        display: none;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+    .copyright {
+        padding: 15px 0 0 15px;
+    }
+    .brand-slider {
+        margin: 15px ;
+    }
+}
