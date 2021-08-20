@@ -1,0 +1,283 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh; 
+}
+
+.input-group {
+  margin: 10px 0px;
+  display: flex; 
+  flex-direction: column;
+}
+
+.input-group.has-error input {
+  border: 1px solid red;
+  color: red;
+  outline: red;
+}
+.error-msg {
+  font-size: 12px;
+  font-style: italic;
+  color: red;
+}
+
+.input-group input {
+  padding: 10px 10px;
+  margin-top: 5px ;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #555555;
+  font-size: 15px;
+}
+
+.authen-form{
+  align-items: center;
+  display: flex; 
+  
+}
+  .form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+
+.flex-col {
+  flex-direction: column;
+}
+
+.btn-link {
+  font-size: 12px;
+  color: blue;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 15px; 
+  transition: .5s;
+  &:hover{
+    text-decoration: underline; 
+  }
+}
+
+.btn-submit{
+  width: 100%;
+  margin-top: 20px; 
+  padding: 12px 0; 
+  font-size: 20px; 
+  background-color: orange;
+  transition: .5s;
+  border-radius: 5px;
+  color: white; 
+  cursor: pointer; 
+  &:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  }
+}
+
+.title-style{
+  font-size: 40px; 
+  margin-bottom: 5px; 
+}
+
+.successful-title{
+  margin-top: 120px; 
+  font-size: 22px; 
+  text-transform: uppercase;
+  display: flex; 
+  justify-content: center;
+}
+
+.successful-btn{
+  width: 70%;
+  margin-top: 30px; 
+  padding: 15px 0; 
+  font-size: 20px; 
+  background-color: orange;
+  transition: .5s;
+  border-radius: 5px;
+  color: white; 
+  cursor: pointer; 
+  &:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  }
+}
+
+ 
+
+nav{
+  display: flex; 
+  justify-content:space-between;
+  align-items: center;
+  border-bottom: 3px solid rgb(111, 107, 107);  
+  .nav__logo{
+    a{
+      margin-left: 100px; 
+      :hover{
+        cursor: pointer; 
+      }
+    }
+  }
+
+  ul{
+    display: flex;  
+    li{
+      list-style: none;
+      margin: 0 5px;  
+      font-size: 25px; 
+      cursor: pointer;
+      transition: .1s;
+      padding: 10px 15px;
+      border-radius: 30px;
+      a{
+        padding: 7px 20px; 
+        border-radius: 15px; 
+      }
+      &:hover{
+        color: orange;
+
+      } 
+      
+    }
+  }
+
+  .nav__authentication{
+    margin-right: 30px;
+    cursor: pointer; 
+    button{
+      width: 70px; 
+      padding: 8px 4px; 
+      margin-left: 10px; 
+      outline: none; 
+      border: none;  
+      border-radius: 5px; 
+      cursor: pointer;  
+      font-weight: bold;
+      transition: .3s; 
+    }
+    #sign-in{
+      color: orange;
+      background-color: rgba(211, 211, 211, 0.381); 
+      &:hover{
+        cursor: pointer; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    }
+    #sign-up{
+      color: white; 
+      background-color: orange;
+      &:hover{
+        cursor: pointer; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    }
+  }
+}
+
+.footer{
+  height: 320px;
+  display: flex;  
+  background-color: rgba(0, 0, 0, 0.694); 
+  padding-left: 70px; 
+  .col{
+    margin-top: 30px; 
+    margin-right: 100px; 
+    color: white; 
+    h2{
+      margin: 0; 
+    }
+    ul{
+      padding-left: 0; 
+      li{
+        list-style: none; 
+      }
+    }
+  }
+}
+
+.col-1{
+  width: 220px;  
+  display: flex; 
+  flex-direction: column;
+  flex-wrap: wrap; 
+  p{
+    margin: 0; 
+    padding-top: 20px; 
+  }
+}
+
+.col--menu{
+  margin-top: 25px; 
+  li{
+    margin-bottom: 15px; 
+  } 
+  li:hover{
+    color:orange;
+    cursor: pointer; 
+    text-decoration: underline; 
+  }
+}
+
+.col--address{
+  margin-top: 25px; 
+  li{  
+    margin-bottom: 18px; 
+    h4{
+      margin: 0px; 
+      font-weight: 300; 
+    }
+    p{
+      margin: 0; 
+      margin-top: 5px; 
+      font-size: 15px; 
+      font-weight: 100; 
+      color:rgb(199, 194, 194) 
+    }
+    label{
+      opacity: .7; 
+      font-size: 12px;  
+    }
+  }
+}
+
+.col-4{
+  width: 600px;
+  button{
+    width: 628px; 
+    margin-top: 15px; 
+    padding: 9px 25px;
+    border-radius: 10px; 
+    background-color: orange;
+    color:white; 
+    font-size: 15px;
+    font-weight: 700; 
+  }    
+  .input-group-feedback{ 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column;
+    margin-top: 10px;
+    label{
+      font-size: 15px; 
+      margin-bottom: 5px; 
+    }
+    input{
+      width: 100%;
+      padding: 10px 12px; 
+      border-radius: 10px;
+      outline: none; 
+    }
+    #feedback{
+      height: 30px; 
+    }
+  }  
+  
+}

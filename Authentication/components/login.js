@@ -1,69 +1,78 @@
-import { InputGroup } from "./inputGroup.js";
+import { InputGroup } from "./input-group.js";
+import { setScreen } from "../app.js";
+import { Register } from "./register.js";
 
-class Login{
-    $container;
-    $title;
-    $formLogin;
-    $inputGroupEmail;
-    $inputGroupPassword;
-    $btnSubmit;
-    constructor(){
-        this.$container = document.createElement("div");
-        this.$container.classList.add("center", "h-screen", "flex-col", "form-desire");
+class Login {
+  $container;
+  $title;
+  $inputGroupEmail;
+  $inputGroupPassword;
+  $form;
+  $button;
+  $borderLine;
+  $linkToRegister;  
 
-        this.$formLogin = document.createElement("form");
-        this.$formLogin.addEventListener("submit", this.handleSubmit);
+  constructor() {
+    this.$container = document.createElement("div");
+    this.$container.style.width = "400px";
+    this.$container.style.margin = "auto";
+    this.$container.classList.add("authen-form", "h-screen", "flex-col");
+    this.$title = document.createElement("h3");
+    this.$title.innerHTML = "Login";
+    this.$title.classList.add("title-style");
+    this.$title.style.marginBottom = "5px";
+    this.$inputGroupEmail = new InputGroup("email", "Email", "email");
+    this.$inputGroupEmail.$input.placeholder = "Enter your Email here";
+    this.$inputGroupPassword = new InputGroup("password","Password","password");
+    this.$inputGroupPassword.$input.placeholder = "Enter your Password here";
+    this.$form = document.createElement("form");
+    this.$form.addEventListener("submit", this.handleSubmit);
+    this.$form.classList.add("form");
+    this.$btnSubmit = document.createElement("button");
+    this.$btnSubmit.type = "submit";
+    this.$btnSubmit.innerHTML = "Login";
+    this.$btnSubmit.classList.add("btn-submit");
+    this.$borderLine = document.createElement("h5");
+    this.$borderLine.innerHTML = "----------or----------";
+    this.$linkToRegister = document.createElement("div");
+    this.$linkToRegister.innerHTML = "Create an account now";
+    this.$linkToRegister.classList.add("btn-link");
+    this.$linkToRegister.addEventListener("click", this.moveToRegister);
+  }
 
-        this.$title = document.createElement("h1");
-        this.$title.style.margin = "10px 0";
-        this.$title.innerHTML = "Login"
+  moveToRegister = () => {
+    const register = new Register();
+    setScreen(register);
+  };
 
-        
+  handleSubmit = (evt) => {
+    evt.preventDefault();
+    const email = this.$inputGroupEmail.getInputValue();
+    const password = this.$inputGroupPassword.getInputValue();
+    //TODO Validation
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((userInfo) => {
+        console.log(userInfo);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-        this.$inputGroupEmail = new InputGroup(
-            "email",
-            "Email",
-            "email"
-        );
+  render() {
+    this.$form.appendChild(this.$inputGroupEmail.render());
+    this.$form.appendChild(this.$inputGroupPassword.render());
+    this.$form.appendChild(this.$btnSubmit);
 
-        this.$inputGroupPassword= new InputGroup(
-            "password",
-            "Password",
-            "password"
-        );
+    this.$container.appendChild(this.$title);
+    this.$container.appendChild(this.$form);
+    this.$container.appendChild(this.$borderLine);
+    this.$container.appendChild(this.$linkToRegister);
+   
+    return this.$container;
+  }
+}
 
-
-        this.$btnSubmit = document.createElement("button");
-        this.$btnSubmit.innerHTML = "Login"
-        this.$btnSubmit.type = "submit";
-    }
-
-    handleSubmit = (evt) => { 
-        evt.preventDefault();
-
-        //validate form 
-        const email = this.$inputGroupEmail.getInputValue(); 
-        const password = this.$inputGroupPassword.getInputValue(); 
- 
-        if(!email) this.$inputGroupEmail.setError("Email cannot be empty");
-        else this.$inputGroupEmail.setError(); 
-
-        if(password.length < 6) this.$inputGroupPassword.setError("Password length must be greater or equal than 6 letters");
-        else this.$inputGroupPassword.setError(); 
-        
-
-    }
-
-    render = () => { 
-        this.$formLogin.appendChild(this.$inputGroupEmail.render()); 
-        this.$formLogin.appendChild(this.$inputGroupPassword.render()); 
-        this.$formLogin.appendChild(this.$btnSubmit); 
-
-        this.$container.appendChild(this.$title);
-        this.$container.appendChild(this.$formLogin);
-
-        return this.$container;
-    }
-} 
-
-export { Login }
+export { Login };
