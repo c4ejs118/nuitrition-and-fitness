@@ -1,8 +1,10 @@
 
-  import { setScreen } from "../app.js";
+import { setScreen } from "../app.js";
 class SuccessfulLogin {
   $container;
   $title;
+  $linkToMainWebsite; 
+
   $btnToMainWebsite;
   $btnToCourse; 
   $btnLogout;
@@ -18,8 +20,13 @@ class SuccessfulLogin {
     this.$title.classList.add("title-style","successful-title");
     this.$title.style.marginBottom = "5px";
 
+    this.$linkToMainWebsite = document. createElement("a");
+    this.$linkToMainWebsite.href = "../main-profile.html";
+    this.$linkToMainWebsite.classList.add("successful-link");
+    
+
     this.$btnToMainWebsite = document.createElement("button");
-    this.$btnToMainWebsite.innerHTML = "Go to main website"
+    this.$btnToMainWebsite.innerHTML = "Go to main website";
     this.$btnToMainWebsite.classList.add("successful-btn");
 
     this.$btnToCourse = document.createElement("button");
@@ -37,9 +44,11 @@ class SuccessfulLogin {
     firebase.auth().signOut();
   };
 
+
   render  = () => {
     this.$container.appendChild(this.$title);
-    this.$container.appendChild(this.$btnToMainWebsite);
+    this.$container.appendChild(this.$linkToMainWebsite);
+    this.$linkToMainWebsite.appendChild(this.$btnToMainWebsite);
     this.$container.appendChild(this.$btnToCourse);
     this.$container.appendChild(this.$btnLogout);
     return this.$container;

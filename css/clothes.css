@@ -34,7 +34,7 @@
 }
 
 .navbar {
-    background-color: #0fb7a3;
+    background-color: orange;
     padding: 0 1rem;
 }
 
@@ -49,6 +49,11 @@ i {
 
 a {
     color: black;
+}
+
+.center-vertical{
+    display: center; 
+    justify-content: center;
 }
 
 a:hover {
@@ -185,7 +190,7 @@ a:hover {
 
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-    background-color: #0fb7a4;
+    background-color: orange;
 }
 
 .custom-navpills {
@@ -237,7 +242,7 @@ a:hover {
 .custom-btn button {
     font-family: roboto;
     border-radius: 50px;
-    background-color: #0fb7a4;
+    background-color: orange;
     border: none;
     color: #fff;
     text-align: center;
@@ -467,7 +472,7 @@ a:hover {
 
 .custom-footer {
     padding: 0 0;
-    background-color: #00447f;
+    background-color: orange;
 }
 
 .input-group {
@@ -504,7 +509,7 @@ a:hover {
 
 .custom-info {
     padding: 20px 5%;
-    background-color: #00447f;
+    background-color: #03223d;
     color: white;
     font-family: arialmt;
     font-size: 14px;

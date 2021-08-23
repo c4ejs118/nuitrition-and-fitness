@@ -1,4 +1,4 @@
-import { InputGroup } from "./input-group.js";
+import { InputGroup } from "./inputGroup.js";
 import { setScreen } from "../app.js";
 import { Register } from "./register.js";
 
@@ -10,6 +10,7 @@ class Login {
   $form;
   $button;
   $borderLine;
+  $feedbackMessage;
   $linkToRegister;  
 
   constructor() {

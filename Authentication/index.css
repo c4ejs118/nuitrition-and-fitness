@@ -61,7 +61,7 @@ body {
   color: blue;
   cursor: pointer;
   font-size: 15px;
-  margin-top: 15px;
+  margin-top: 5px;
   transition: 0.5s;
 }
 .btn-link:hover {
@@ -69,8 +69,9 @@ body {
 }
 
 .btn-submit {
-  width: 100%;
-  margin-top: 20px;
+  width: 250px;
+  margin-top: 10px;
+  margin-left: 23px;
   padding: 12px 0;
   font-size: 20px;
   background-color: orange;
@@ -111,6 +112,11 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.successful-link {
+  width: 100%;
+  margin-left: 118px;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -125,6 +131,7 @@ nav .nav__logo a :hover {
 }
 nav ul {
   display: flex;
+  margin-right: 400px;
 }
 nav ul li {
   list-style: none;
@@ -138,8 +145,10 @@ nav ul li {
 nav ul li a {
   padding: 7px 20px;
   border-radius: 15px;
+  text-decoration: none;
+  color: black;
 }
-nav ul li:hover {
+nav ul li:hover a {
   color: orange;
 }
 nav .nav__authentication {

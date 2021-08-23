@@ -1,4 +1,4 @@
-import { InputGroup } from "./input-group.js";
+import { InputGroup } from "./inputGroup.js";
 import { Login } from "./login.js";
 import { setScreen } from "../app.js";
 

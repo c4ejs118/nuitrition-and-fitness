@@ -12,7 +12,7 @@ class InputGroup {
         this.$input.name = name; 
 
         this.$label = document.createElement("label");
-        this.$label.style.width = "100%";     
+        this.$label.style.width = "250px";     
         this.$label.innerHTML = label; 
 
         this.$errorMsg = document.createElement("label")
@@ -34,7 +34,11 @@ class InputGroup {
     setInputValue = (newValue) => {
         this.$input.value = newValue;
     } 
-    
+
+    getInputValue = () => {
+        return this.$input.value; 
+    }
+
     render() {
         this.$label.appendChild(this.$input);
         this.$label.appendChild(this.$errorMsg)
