@@ -1,0 +1,278 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: scroll;
+  background: #d1fffd;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  background: url(../../images/background.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.main-content--header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px;
+  margin: 0;
+}
+.main-content--header nav .navbar__logo a img {
+  width: 180px;
+}
+.main-content--header nav .navbar__input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+}
+.main-content--header nav .navbar__input .input--searchBar i {
+  position: relative;
+  left: 45px;
+  font-size: 20px;
+  z-index: 1;
+}
+.main-content--header nav .navbar__input .input--searchBar input {
+  width: 400px;
+  height: 35px;
+  font-size: 20px;
+  padding: 5px 50px;
+  border: 3px solid black;
+  border-radius: 30px;
+  z-index: 0;
+  outline: none;
+}
+.main-content--header nav .navbar__input .input--avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  margin-left: 20px;
+}
+.main-content--header nav .navbar__input .input--avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main-content--header .header {
+  width: 100%;
+  height: 700px;
+}
+.main-content--header .header .header__container {
+  position: relative;
+  top: 50px;
+  left: 100px;
+}
+.main-content--header .header .header__container h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  text-shadow: 15px;
+}
+.main-content--header .header .header__container p {
+  width: 800px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 25px;
+}
+.main-content--header .header .header__container button {
+  text-decoration: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: bold;
+  background: #26b1f7;
+  color: white;
+  letter-spacing: 0.025em;
+  margin-bottom: 30px;
+  outline: none;
+  border: none;
+  transition: 0.5s;
+  position: relative;
+}
+.main-content--header .header .header__container button:hover {
+  top: -1px;
+}
+
+.main-content__account {
+  position: absolute;
+  top: 500px;
+  left: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.main-content__account .user-profile__overall {
+  width: 450px;
+  height: 100%;
+  background: white;
+  border-radius: 15px;
+}
+.main-content__account .user-profile__overall .overall__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-content__account .user-profile__overall .overall__form .overall__header {
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  top: -80px;
+  transition: 0.3s;
+}
+.main-content__account .user-profile__overall .overall__form .overall__header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.main-content__account .user-profile__overall .overall__form .overall__header:hover {
+  top: -90px;
+}
+.main-content__account .user-profile__overall .overall__form .overall__content {
+  position: relative;
+  top: -50px;
+}
+.main-content__account .user-profile__overall .overall__form .overall__content .content__name-age {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+.main-content__account .user-profile__overall .overall__form .overall__content .content__name-age .content--name {
+  font-weight: 700;
+}
+.main-content__account .user-profile__overall .overall__form .overall__content .content__location {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  opacity: 0.7;
+}
+.main-content__account .user-profile__overall .overall__form .overall__content .content__work {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-content__account .user-profile__overall .overall__form .overall__content .content__work .content__job {
+  font-size: 18px;
+}
+.main-content__account .user-profile__overall .overall__form .overall__content .content__work .content__school {
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: none;
+  opacity: 0.7;
+}
+.main-content__account .user-profile__detail {
+  width: 800px;
+  height: 100%;
+  background: #eee9e9;
+  margin-left: 70px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.main-content__account .user-profile__detail .detail__form {
+  width: 100%;
+}
+.main-content__account .user-profile__detail .detail__form .detail__header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.main-content__account .user-profile__detail .detail__form .detail__header label {
+  margin: 0 40px;
+  font-size: 20px;
+}
+.main-content__account .user-profile__detail .detail__form .detail__header button {
+  position: relative;
+  background-color: #26b1f7;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 30px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: 0.5s;
+}
+.main-content__account .user-profile__detail .detail__form .detail__header button:hover {
+  top: -1px;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information {
+  padding: 24px;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--header h3 {
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 4px 0px;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content {
+  display: flex;
+  flex-direction: column;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content .content--row {
+  display: flex;
+  margin: 10px 0;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content .content--row .content--name {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content .content--row .content--name label {
+  margin: 10px 0;
+  font-weight: 600;
+  font-size: 15px;
+  color: #242429;
+  font-size: 15px;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content .content--row .content--name input {
+  width: 320px;
+  padding: 15px 12px;
+  border: none;
+  border-radius: 10px;
+  color: #969191;
+  font-weight: 700;
+  outline: none;
+  box-shadow: 5px 5px 1000px grey;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content .content--row #content-address {
+  width: 100%;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content .content--row #content-address input {
+  width: 700px;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content .content--row #content-address #description {
+  height: auto;
+  resize: horizontal;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content #content--location {
+  width: 100%;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information .detail__card .card--content #content--location input {
+  width: 191px;
+  overflow-wrap: scroll;
+}
+.main-content__account .user-profile__detail .detail__form .detail__information hr {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/*# sourceMappingURL=profile.css.map */

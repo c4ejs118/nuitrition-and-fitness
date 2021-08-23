@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/dashboard/dashboard.css">
+    <link rel="stylesheet" type = "text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/tab__logo.png"/>
+    <script src = "src/menuToggle.js"></script>
+    <script src = "src/dashboard.js"></script>
+    <title>Dashboard | Quizzery</title>
+</head>
+<body>
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="sidebar__header">
+            <div class="sidebar__logo">
+                <a href = "dashboard.html">
+                    <img src = "images/logo.png">
+                </a>
+            </div>
+            <div class="sidebar__toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+
+
+        <div class="sidebar__list">
+            <ul>
+                <li>
+                    <a href = "lesson.html"><i class="fas fa-pen"></i>Lesson</a>
+                </li>
+                <li>
+                    <a href = "homework.html"><i class="fa fa-tasks"></i>Homework</a>
+                </li>
+                <li>
+                    <a href = "schedule.html"><i class="fas fa-calendar-alt"></i>Schedule</a>
+                </li>
+                <li>
+                    <a href = "attendance.html"><i class="fas fa-concierge-bell"></i>Attendance</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <!-- main-content -->
+    <div class="center">
+        <div class="center__header">
+            <div class="header__searchBar">
+                <i class="fas fa-search"></i>
+                <input type = "text" placeholder = "Search....">
+            </div>
+
+            <div class="header__profile">
+                <div class="profile__picture" onCLick = "menuToggle();">
+                    <img src = "images/My profile Pics.jpg">
+                </div>
+                <div class="profile__menu">
+                    <h3>Alex Pham<br></h3>
+                    <ul>
+                        <li> 
+                            <a href = "profile.html"><i class="fas fa-user-circle"></i>Profile</a>
+                        </li>
+                        <li> 
+                            <a href = "#"><i class="fas fa-inbox"></i>Inbox</a>
+                        </li>
+                        <li> 
+                            <a href = "#"><i class="fas fa-question-circle"></i>Help</a>
+                        </li>
+                        <li> 
+                            <a href = "#"><i class="fas fa-cog"></i>Setting</a>
+                        </li>
+                        <li> 
+                            <a href = "loginForm.html"><i class="fas fa-sign-out-alt"></i>Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="center__tittle">
+            <h4>Course list</h4>
+        </div>
+
+        <div class="center__course">
+            <ul id = "course--list">
+                <li>
+                    <div class="course__list">
+                        <div class="course__header">
+                            <h2><a href = "#">C4E-JS-118</a></h2>
+                            <h3>Instructor: <a href = "#">Nguyen Quoc Khanh</a></h3>   
+                        </div>
+                        <div class="course__center">
+                            Làm quen với lập trình căn bản và ngôn ngữ Javascript đang phổ biến hiện nay
+                        </div>
+                        <div class="course__footer">
+                            <p>Opening date:<span> 10.06.2021</span></p> 
+                            <p>Status:<span> Pending</span></p> 
+                        </div>
+                    </div>
+                </li>
+            </ul>    
+        </div>
+    </div>
+</body>
+</html

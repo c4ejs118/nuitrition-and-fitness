@@ -1,0 +1,64 @@
+@mixin sidebar-list{
+    width: 250px; 
+    height: 10000px;
+    background: rgb(6, 12, 81);
+    color: white;
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .sidebar__logo{
+            a{
+                height: 100%;
+                margin: 5px 0 5px 15px; 
+                padding: 0; 
+                cursor: pointer;
+                img{
+                    width: 100px;
+                }
+            }
+        }
+        .sidebar__toggle{
+            i{
+                margin-right: 15px;
+                cursor: pointer;    
+            }
+        }
+    }
+
+
+    &__list{
+        height: 100vh;
+        ul{
+            li{
+                position: relative;
+                height: 50px;
+                width: 100%;
+                padding: 0 10px;
+                padding-top: 15px; 
+                cursor: pointer;    
+                line-height: 40px; 
+                transition: .5s;
+                &:hover{
+                    background: rgba(65, 236, 255, 0.36);
+                    font-size: 17px;
+                    a{
+                        opacity: 1;
+                    }
+                }
+                a{
+                    text-decoration: none   ;
+                    padding-left: 25px;
+                    color: white;
+                    font-size: 17px;
+                    opacity: .7;
+                    display: inline-block;
+                    i{
+                        margin-right: 15px;
+                    }
+                }
+            }
+            
+        }
+    }
+}
