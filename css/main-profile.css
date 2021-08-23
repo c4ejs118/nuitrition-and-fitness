@@ -34,7 +34,7 @@
 }
 
 .navbar {
-    background-color: #0fb7a3;
+    background-color: orange;
     padding: 0 1rem;
 }
 
@@ -104,7 +104,7 @@ a:hover {
 
 .custom-banner {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 
 .dropdown-toggle::after {
@@ -189,7 +189,7 @@ a:hover {
 
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-    background-color: #0fb7a4;
+    background-color: orange;
 }
 
 .custom-navpills {
@@ -242,7 +242,7 @@ a:hover {
 .custom-btn button {
     font-family: roboto;
     border-radius: 50px;
-    background-color: #0fb7a4;
+    background-color: orange;
     border: none;
     color: #fff;
     text-align: center;
@@ -365,6 +365,10 @@ a:hover {
 }
 
 /*  */
+.center-vertical{
+    display: flex; 
+    justify-content: center;
+}
 
 .rounded-circle {
     box-shadow: 0 0 0 3px #cdcdde;
@@ -385,7 +389,7 @@ a:hover {
 .name {
     text-transform: uppercase;
     font-weight: bold;
-    color: #0fb7a4;
+    color: orange;
 }
 
 .custom-avatar span:last-of-type {
@@ -443,6 +447,7 @@ a:hover {
 
 .brand-slider {
     margin: 30px 10%;
+    display: flex; 
 }
 
 .brand-slider img {
@@ -466,7 +471,7 @@ a:hover {
 .custom-btn-showroom button {
     font-size: 16px;
     color: white;
-    background-color: #0fb7a4;
+    background-color: orange;
     padding: 5px 50px;
     border-radius: 30px;
 }
