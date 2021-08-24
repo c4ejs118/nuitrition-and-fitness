@@ -162,6 +162,10 @@ a:hover {
     text-transform: uppercase;
 }
 
+.nav__logo--image{
+    
+}
+
 .center-image img {
     height: 500px;
     width: 100%;
@@ -241,7 +245,7 @@ a:hover {
 .custom-btn button {
     font-family: roboto;
     border-radius: 50px;
-    background-color: #0fb7a4;
+    background-color: orange;
     border: none;
     color: #fff;
     text-align: center;
