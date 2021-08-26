@@ -1,89 +1,620 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.10.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.10.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.10.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.10.0/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.10.0/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.10.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.10.0/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.10.0/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.10.0/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.10.0/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition and Fitness</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-  </body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/main-profile.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row custom-header">
+            <div class="col-xs-6 col-md-2"><a href = "main-profile.html"><img src="../Pictures/website_logo.png" alt="" width = "100px"></a></div>
+            <div class="col-xs-6 col-md-8">Nutrition and Fitness</div>
+            <div class="col-xs-6 col-md-2">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href = "#"><i class="fas fa-shopping-bag"></i></a> 
+                <a href="./Authentication/index.html"><i class="far fa-user-circle" cursor = "pointer"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-list"></i> Menu
+            </button>
+            <div class="collapse navbar-collapse custom-navbar center-vertical" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="aboutus.html">About us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="clothes.html" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Sport clothes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="clothes.html">Shirt</a></li>
+                            <li><a class="dropdown-item" href="clothes.html">Pants</a></li>
+                            <li><a class="dropdown-item" href="clothes.html">Gloves</a></li>
+                            <li><a class="dropdown-item" href="clothes.html">Hats</a></li>
+                            <li><a class="dropdown-item" href="clothes.html">Trackers</a></li>
+                            <li><a class="dropdown-item" href="clothes.html">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="product.html" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Nutrition product
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="product.html">Weight lost</a></li>
+                            <li><a class="dropdown-item" href="product.html">Muscle gained</a></li>
+                            <li><a class="dropdown-item" href="product.html">Stress relieves</a></li>
+                            <li><a class="dropdown-item" href="product.html">Vitamin</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="screen/Blog/blog1.html">Blog and news</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="findus.html">Find us</a>
+                    </li>
+                </ul>
+            </div>
+      
+    </nav>
+
+
+    <img src="./images/sport-product/banner.jpg" class="img-fluid custom-banner" alt=""height = "1500px">
+
+    <div class="container-fluid">
+        <div class="row custom-p-header">
+            <div class="col-xs-6 col-md-2"></div>
+            <div class="col-xs-6 col-md-8">Collection</div>
+            <div class="col-xs-6 col-md-2"></div>
+        </div>
+        <div class="row custom-collection">
+            <div class="col-xs-6 col-md-1"></div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#">
+                    <div class="center-image">
+                        <img src="./images/sport-product/cate 1.png" alt="">
+                        <div class="info-center">
+                            Fitness <br>
+                            <span>250 Products</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <a href="#">
+                    <div class="side-image">
+                        <img src="./images/sport-product/cate 2.png" alt="">
+                        <div class="info-side">
+                            Workout <br>
+                            <span>250 Products</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="side-image">
+                        <img src="./images/sport-product/cate 3.png" alt="">
+                        <div class="info-side">
+                            Girl <br>
+                            <span>250 Products</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#">
+                    <div class="center-image">
+                        <img src="./images/sport-product/cate 4.png" alt="">
+                        <div class="info-center">
+                            Man <br>
+                            <span>250 products</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-1"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <ul class="nav nav-pills custom-navpills">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#new" role="tab" aria-controls="pills-new"
+                        aria-selected="true">Just released</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#hot" role="tab" aria-controls="pills-hot"
+                        aria-selected="false">Best viewing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#sale" role="tab" aria-controls="pills-sale"
+                        aria-selected="false">best seller </a>
+                </li>
+            </ul>
+            <div class="tab-content mt-3">
+                <div class="tab-pane fade show active custom-tab" id="new" role="tabpanel" aria-labelledby="new-tab">
+                    <!-- Line product 1 -->
+                    <div class="row">
+                        <div class="col-xs-6 col-md-1 m-r-3"></div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#"><img src="./images/sport-product/combo-ta.png" alt="">
+                                <div class="price">
+                                    Combo Tạ + Đòn <br>
+                                    <span>1.499.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/dan-ta-ngang.png" alt="">
+                                <div class="price">
+                                    Giá để tạ ngang + thanh tạ <br>
+                                    <span>899.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/dan-ta-tay.png" alt="">
+                                <div class="price">
+                                    Giá để tạ tay + tạ đơn<br>
+                                    <span>1.199.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/day-keo.png" alt="">
+                                <div class="price">
+                                    Dây kéo lực <br>
+                                    <span>99.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-1"></div>
+                    </div>
+
+                    <!-- Line product 2 -->
+                    <div class="row">
+                        <div class="col-xs-6 col-md-1 m-r-3"></div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/dung-cu-hit-dat.png" alt="">
+                                <div class="price">
+                                    Dụng cụ hít đất <br>
+                                    <span>399.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/may-chay.png" alt="">
+                                <div class="price">
+                                    Máy chạy bộ <br>
+                                    <span>5.499.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/may-tap-full.png" alt="">
+                                <div class="price">
+                                    Máy tập full body <br>
+                                    <span>7.499.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/ta-cam.png" alt="">
+                                <div class="price">
+                                    Tạ cầm tay <br>
+                                    <span>499.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-1"></div>
+                    </div>
+
+                    <div class="text-center custom-btn">
+                        <a href=""><button><span>More</span></button></a>
+                    </div>
+                </div>
+                <div class="tab-pane fade custom-tab" id="hot" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-1 m-r-3"></div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/ta-tay.png" alt="">
+                                <div class="price">
+                                    Tạ đơn <br>
+                                    <span>299.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/tap-bung-gia-re.png" alt="">
+                                <div class="price">
+                                    Tập bụng giá rẻ <br>
+                                    <span>199.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/tap-bung.png" alt="">
+                                <div class="price">
+                                    Dụng cụ tập bụng <br>
+                                    <span>899.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/dung-cu-hit-dat.png" alt="">
+                                <div class="price">
+                                    Dụng cụ hít đất <br>
+                                    <span>399.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6 col-md-1 m-r-3"></div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#"><img src="./images/sport-product/day-keo.png" alt="">
+                                <div class="price">
+                                    Dây kéo lực <br>
+                                    <span>99.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/may-chay.png" alt="">
+                                <div class="price">
+                                    Máy chạy bộ <br>
+                                    <span>5.499.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/dan-ta-tay.png" alt="">
+                                <div class="price">
+                                    Giá để tạ tay + tạ đơn<br>
+                                    <span>1.199.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/dan-ta-ngang.png" alt="">
+                                <div class="price">
+                                    Giá để tạ ngang + thanh tạ <br>
+                                    <span>899.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-1"></div>
+                    </div>
+                </div>
+                <div class="tab-pane fade custom-tab" id="sale" role="tabpanel" aria-labelledby="sale-tab">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-1 m-r-3"></div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/may-chay.png" alt="">
+                                <div class="price">
+                                    Máy chạy bộ <br>
+                                    <span>5.499.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/dung-cu-hit-dat.png" alt="">
+                                <div class="price">
+                                    Dụng cụ hít đất <br>
+                                    <span>399.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/tap-bung.png" alt="">
+                                <div class="price">
+                                    Dụng cụ tập bụng <br>
+                                    <span>899.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-md-2">
+                            <a href="#">
+                                <img src="./images/sport-product/dan-ta-tay.png" alt="">
+                                <div class="price">
+                                    Giá để tạ tay + tạ đơn<br>
+                                    <span>1.199.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-slide">
+        <div class="custom-header-slide">
+            <span>Customers feedback</span>
+        </div>
+        <div id="carousel-slider">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-5 custom-avatar">
+                            <img class="rounded-circle" src="./images/sport-product/user 1.png" alt="">
+                            <span class="name">Hoàng Kiều Linh</span> <br>
+                            <span>- Manager của phát triển kinh doanh, 2base -</span>
+                        </div>
+                        <div class="col-xs-12 col-md-7 custom-review">Đó là một thực tế được thành lập từ lâu rằng một
+                            độc giả sẽ bị phân tâm bởi nội dung có thể đọc được của một trang khi nhìn vào cách bố trí
+                            của nó. Điểm của việc sử dụng Lorem Ipsum là nó có cách phân phối bình thường nhiều hơn hoặc
+                            ít hơn các chữ cái</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-5 custom-avatar">
+                            <img class="rounded-circle" src="./images/sport-product/user 2.png" alt="">
+                            <span class="name">Nguyễn Thị Diệu Linh</span> <br>
+                            <span>- Manager của phát triển phần mềm, 2base -</span>
+                        </div>
+                        <div class="col-xs-12 col-md-7 custom-review">Đó là một thực tế được thành lập từ lâu rằng một
+                            độc giả sẽ bị phân tâm bởi nội dung có thể đọc được của một trang khi nhìn vào cách bố trí
+                            của nó. Điểm của việc sử dụng Lorem Ipsum là nó có cách phân phối bình thường nhiều hơn hoặc
+                            ít hơn các chữ cái</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-5 custom-avatar">
+                            <img class="rounded-circle" src="./images/sport-product/user 3.png" alt="">
+                            <span class="name">Hoàng Thùy Linh</span> <br>
+                            <span>- Manager của phát triển hàng hóa, 2base -</span>
+                        </div>
+                        <div class="col-xs-12 col-md-7 custom-review">Đó là một thực tế được thành lập từ lâu rằng một
+                            độc giả sẽ bị phân tâm bởi nội dung có thể đọc được của một trang khi nhìn vào cách bố trí
+                            của nó. Điểm của việc sử dụng Lorem Ipsum là nó có cách phân phối bình thường nhiều hơn hoặc
+                            ít hơn các chữ cái</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid custom-news">
+        <div class="custom-header-news">
+            <span>Events and news </span>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-1"></div>
+            <div class="col-xs-6 col-md-5">
+                <div class="row custom-part-news">
+                    <div class="col-xs-6 col-md-6 custom-img-news">
+                        <a href=""><img src="./images/sport-product/news 1.png" alt=""></a>
+                    </div>
+                    <div class="col-xs-6 col-md-6 custom-img-detail">
+                        <a href="">Offline Hội Gym Việt</a> <br>
+                        <span class="author">Bởi Trum Cucumber</span>
+                        <p>Mê hoặc cả thế giới với những cú chạm tay thần thánh, giờ đây dấu nhân này đã...</p>
+                        <span class="number-comment">0 Bình luận</span> &nbsp; <span class="read-more">Đọc thêm</span>
+                    </div>
+                </div>
+
+                <div class="row custom-part-news">
+                    <div class="col-xs-6 col-md-6 custom-img-news">
+                        <a href=""><img src="./images/sport-product/news 2.png" alt=""></a>
+                    </div>
+                    <div class="col-xs-6 col-md-6 custom-img-detail">
+                        <a href="">Những hotgirl của hội Gym California</a> <br>
+                        <span class="author">Bởi Trum Cucumber</span>
+                        <p>Mê hoặc cả thế giới với những cú chạm tay thần thánh, giờ đây dấu nhân này đã...</p>
+                        <span class="number-comment">0 Bình luận</span> &nbsp; <span class="read-more">Đọc thêm</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-md-5">
+                <div class="row custom-part-news">
+                    <div class="col-xs-6 col-md-6 custom-img-news">
+                        <a href=""><img src="./images/sport-product/news 3.png" alt=""></a>
+                    </div>
+                    <div class="col-xs-6 col-md-6 custom-img-detail">
+                        <a href="">Khởi động chiến dịch nhà nhà tập thể dục</a> <br>
+                        <span class="author">Bởi Trum Cucumber</span>
+                        <p>Mê hoặc cả thế giới với những cú chạm tay thần thánh, giờ đây dấu nhân này đã...</p>
+                        <span class="number-comment">0 Bình luận</span> &nbsp; <span class="read-more">Đọc thêm</span>
+                    </div>
+                </div>
+
+                <div class="row custom-part-news">
+                    <div class="col-xs-6 col-md-6 custom-img-news">
+                        <a href=""><img src="./images/sport-product/news 4.png" alt=""></a>
+                    </div>
+                    <div class="col-xs-6 col-md-6 custom-img-detail">
+                        <a href="">Những bài tập tại nhà hiệu quả</a> <br>
+                        <span class="author">Bởi Trum Cucumber</span>
+                        <p>Mê hoặc cả thế giới với những cú chạm tay thần thánh, giờ đây dấu nhân này đã...</p>
+                        <span class="number-comment">0 Bình luận</span> &nbsp; <span class="read-more">Đọc thêm</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-1"></div>
+            <div class="text-center custom-btn">
+                <button><span>More</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="brand-slider" class="brand-slider">
+
+        <!-- Slide 1 -->
+        <div>
+            <img src="./images/sport-product/brand 1.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 2.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 3.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 4.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 5.png" alt="">
+        </div>
+
+        <!-- Slide 2 -->
+
+        <!-- <div>
+            <img src="./images/sport-product/brand 1.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 2.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 3.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 4.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 5.png" alt="">
+        </div> -->
+
+        <!-- Slide 3 -->
+
+        <!-- <div>
+            <img src="./images/sport-product/brand 1.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 2.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 3.png" alt="">
+        </div>
+        <div>   
+            <img src="./images/sport-product/brand 4.png" alt="">
+        </div>
+        <div>
+            <img src="./images/sport-product/brand 5.png" alt="">
+        </div> -->
+    </div>
+
+    <div class="custom-showroom">
+        Hệ thống cửa hàng dụng cụ thể thao trên toàn quốc
+        <div class="text-center custom-btn-showroom">
+            <button><span>Hệ thống 10 showroom</span></button>
+        </div>
+    </div>
+
+    <div class="container-fluid custom-info">
+        <div class="row custom-bottom">
+            <div class="col-xs-6 col-md-4 custom-pb-footer">
+                <span class="main-info">NUTRITION AND FITNESS</span> <br> <br>
+                <i class="fas fa-map-marker-alt"></i> <span>Address:</span> Tầng 6, toà C, 22 Thành Công, Tp.Hà Nội, Việt Nam <br><br>
+                <i class="fas fa-envelope"></i> <span>Email:</span> info@gmail.com <br><br> 
+                <i class="fas fa-phone-alt"></i> <span>Phone:</span> +842477705666 <br><br> 
+                <i class="fas fa-globe-americas"></i> <span>Website:</span> https://mindx.edu.vn/
+            </div>
+            <div class="col-xs-6 col-md-4 custom-pb-footer">
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14896.825767461902!2d105.79380724852884!3d21.024424202020693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9f10111ae7%3A0x9112347ed343cc56!2zTWluZFggY8ahIHPhu58gVGjDoG5oIEPDtG5nIChUZWNoa2lkcyDEkeG7lWkgdMOqbik!5e0!3m2!1svi!2s!4v1628691140934!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-4 custom-pb-footer">
+                <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="events" data-width=""
+                    data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
+                    data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a
+                            href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright 2021 @ Design by Công Vip Pro
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0"
+        nonce="QiZzdcsH"></script>
+    <script src="./js/index.js"></script>
+</body>
+
 </html>
